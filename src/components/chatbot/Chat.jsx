@@ -10,7 +10,7 @@ const Chatbot = () => {
     const [chatHistory, setChatHistory] = useState([
         {
             role: "model",
-            text: "How are you 👋 Welcome to Aroma Beans Coffee ☕. How can I help you today?"
+            text: "How are you 👋 Welcome to Aroma Beans Coffee . How can I help you today?"
         }
     ]);
 
