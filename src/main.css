@@ -5,6 +5,16 @@
     box-sizing: border-box;
 }
 
+:root {
+    --ui-surface: rgba(255, 255, 255, 0.12);
+    --ui-surface-hover: rgba(255, 255, 255, 0.18);
+    --ui-border: rgba(255, 255, 255, 0.22);
+    --ui-text-soft: #dbe7ff;
+    --ui-primary: #00c6ff;
+    --ui-primary-hover: #0a84ff;
+    --ui-ease: 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
 /* FULL SCREEN */
 html,
 body,
@@ -18,6 +28,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #141e30, #243b55);
     color: white;
+    line-height: 1.45;
 }
 
 /* ================= NAVBAR ================= */
@@ -29,8 +40,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(20, 30, 48, 0.62);
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--ui-border);
     padding: 15px 25px;
     z-index: 1000;
 }
@@ -53,10 +65,11 @@ body {
     left: -240px;
     width: 240px;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(9, 15, 26, 0.94);
     padding-top: 80px;
-    transition: 0.3s;
+    transition: left var(--ui-ease);
     z-index: 999;
+    border-right: 1px solid var(--ui-border);
 }
 
 .sidebar.show {
@@ -66,14 +79,15 @@ body {
 .sidebar a {
     display: block;
     padding: 15px 20px;
-    color: #ccc;
+    color: var(--ui-text-soft);
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color var(--ui-ease), color var(--ui-ease), padding-left var(--ui-ease);
 }
 
 .sidebar a:hover {
-    background: #00c6ff;
+    background: rgba(0, 198, 255, 0.2);
     color: white;
+    padding-left: 24px;
 }
 
 /* ================= MAIN ================= */
@@ -85,7 +99,7 @@ body {
     margin-top: 80px;
     padding: 30px;
     width: 100%;
-    transition: 0.3s;
+    transition: margin-left var(--ui-ease);
 }
 
 /* SHIFT WHEN SIDEBAR OPEN */
@@ -120,14 +134,17 @@ body {
     align-items: center;
     justify-content: center;
 
-    background: rgba(255, 255, 255, 0.12);
+    background: var(--ui-surface);
+    border: 1px solid var(--ui-border);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform var(--ui-ease), background-color var(--ui-ease), box-shadow var(--ui-ease);
 }
 
 .card:hover {
-    transform: translateY(-6px) scale(1.05);
-    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-4px);
+    background: var(--ui-surface-hover);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24);
 }
 
 /* ================= PROFILE ================= */
@@ -161,7 +178,14 @@ input {
     padding: 12px;
     margin: 10px 0;
     border-radius: 8px;
-    border: none;
+    border: 1px solid transparent;
+    transition: border-color var(--ui-ease), box-shadow var(--ui-ease);
+}
+
+input:focus {
+    outline: none;
+    border-color: rgba(0, 198, 255, 0.65);
+    box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.18);
 }
 
 /* ================= BUTTON ================= */
@@ -169,14 +193,16 @@ button {
     padding: 10px 15px;
     border-radius: 8px;
     border: none;
-    background: #00c6ff;
+    background: var(--ui-primary);
     color: white;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color var(--ui-ease), transform var(--ui-ease), box-shadow var(--ui-ease);
 }
 
 button:hover {
-    background: #0072ff;
+    background: var(--ui-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 114, 255, 0.28);
 }
 
 /* ================= CHAT ================= */
