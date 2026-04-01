@@ -1,0 +1,89 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.coo{
+    color: white;
+}
+/* FULL SCREEN CENTER FIX */
+.login-body {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    /* ✅ THIS WAS MISSING */
+    justify-content: center;
+    /* ✅ CENTER HORIZONTAL */
+    align-items: center;
+    /* ✅ CENTER VERTICAL */
+
+    background: linear-gradient(135deg, #141e30, #243b55);
+}
+/* BODY */
+body {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+/* LOGIN BOX */
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 45px;
+    border-radius: 20px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* LOGO */
+.logo {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+.subtitle {
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+/* TITLE */
+.login-container h1 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* INPUT */
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+}
+
+/* BUTTON */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-container button:hover {
+    background: #0072ff;
+    transform: scale(1.05);
+}
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
