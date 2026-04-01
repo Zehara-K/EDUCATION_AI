@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./main.css";
+import "./login.css";
 import { useNavigate } from "react-router-dom";
 import {useEffect } from "react";
 import Chat from "./components/chatbot/Chat";
